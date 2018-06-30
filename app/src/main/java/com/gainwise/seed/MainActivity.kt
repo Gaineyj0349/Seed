@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         iv.minZoom = .5f
         iv.maxZoom = 1000f
-
         tv.text = System.currentTimeMillis().getLocaleDateString()
     }
 }
