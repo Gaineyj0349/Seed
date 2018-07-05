@@ -54,16 +54,15 @@ class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : App
                 allGranted = false
                 break;
             }
+        }
+        if(allGranted) {
+            // all permissions are granted
+            permissionsDirective.executeOnPermissionGranted()
+        }
+        else {
+            // if one was denied this will be called
+            permissionsDirective.executeOnPermissionDenied()
 
-            if(allGranted) {
-                // all permissions are granted
-                permissionsDirective.executeOnPermissionGranted()
-            }
-            else {
-                // if one was denied this will be called
-                permissionsDirective.executeOnPermissionDenied()
-
-            }
         }
     }
 
@@ -74,6 +73,16 @@ class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : App
          intent.data = uri
          context.startActivity(intent)
          Toast.makeText(context, "Go to Permissions to Grant Storage", Toast.LENGTH_LONG).show()
+    }
+
+     fun needPermissions(permission: Array<String?>): Boolean {
+        var show = true
+        for (i in permission.indices) {
+            if (ContextCompat.checkSelfPermission(permissionsDirective.activity, permission[i]!!) != PackageManager.PERMISSION_GRANTED) {
+                show = false
+            }
+        }
+        return show
     }
 
 }
