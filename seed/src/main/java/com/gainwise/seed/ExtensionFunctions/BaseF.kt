@@ -63,3 +63,7 @@ fun Context.watchYoutubeVideo(id: String) {
     }
 
 }
+
+fun String.removeAllButNumbers(): String{
+   return this.replace("[^0-9]".toRegex(), "")
+}

@@ -11,7 +11,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 
-class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : AppCompatActivity() {
+open class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : AppCompatActivity() {
 
     /*
     FROM THE PERMISSION CALLING ACTIVITY
