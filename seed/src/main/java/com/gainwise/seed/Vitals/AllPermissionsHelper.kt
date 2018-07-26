@@ -82,7 +82,7 @@ class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : App
                 show = false
             }
         }
-        return show
+        return !show
     }
 
 }
