@@ -11,7 +11,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 
-open class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : AppCompatActivity() {
+class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : AppCompatActivity() {
 
     /*
     FROM THE PERMISSION CALLING ACTIVITY
@@ -45,7 +45,7 @@ open class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) 
 
     fun handleResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
 
-        var allGranted = false
+        var allGranted = true
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         for (i in permissions.indices) {
