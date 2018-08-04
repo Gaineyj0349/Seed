@@ -6,9 +6,9 @@
 
     <application>
         <activity
+            android:theme="@android:style/Theme.Black.NoTitleBar"
             android:name=".Activities.CrashActivityTriggered"
-            android:label="@string/title_activity_crash_triggered"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_crash_triggered"></activity>
     </application>
 
 </manifest>

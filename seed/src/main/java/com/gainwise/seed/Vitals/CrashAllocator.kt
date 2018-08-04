@@ -13,6 +13,7 @@ class CrashAllocator(//declare variable for object imlementing interface
 
         val prefs = context.getSharedPreferences(prefsNameToSaveStackTrace, Context.MODE_PRIVATE).edit();
         prefs.putString("CRASH", ex.causeAndStackTraceToString())
+        prefs.putBoolean("CRASHED", true)
         prefs.apply()
         //Code passed via the Crashable interface in the constructor is executed
         ourCrashHandler.executeOnCrash()
