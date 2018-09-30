@@ -32,13 +32,10 @@ class AllPermissionsHelper(var permissionsDirective: PermissionsDirective) : App
         this.requestCode = permissionsDirective.requestCode
     }
 
-    // all permissions are asked for
+    // all permissions are asked for - be sure to use check selfpermission() method first in if block
     fun requestPermissions(){
-        for (i in permission.indices) {
-            if (ContextCompat.checkSelfPermission(activity, permission[i]!!) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(activity, permission, requestCode)
-            }
-        }
+        ActivityCompat.requestPermissions(activity, permission, requestCode)
+
     }
 
      //this is where the results are handled - actions are based upon the passed in PermissionsDirective object
